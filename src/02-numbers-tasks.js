@@ -52,7 +52,7 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
- return ((value1 + value2)/2);
+  return ((value1 + value2) / 2);
 }
 
 /**
@@ -70,7 +70,7 @@ function getAverage(value1, value2) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints( x1, y1, x2, y2 ) {
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
   const dx = x2 - x1;
   const dy = y2 - y1;
   return Math.sqrt(dx * dx + dy * dy);
@@ -89,7 +89,6 @@ function getDistanceBetweenPoints( x1, y1, x2, y2 ) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
- 
   return -b / a;
 }
 
@@ -188,7 +187,7 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
- const factor = Math.pow(10, pow);
+  const factor = Math.pow(10, pow);
   return Math.round(num / factor) * factor;
 }
 
@@ -240,9 +239,8 @@ function toNumber(value, def) {
   const num = Number(value);
   if (!isNaN(num)) {
     return num;
-  } else {
-    return def;
   }
+  return def;
 }
 
 module.exports = {
