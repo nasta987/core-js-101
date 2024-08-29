@@ -52,7 +52,12 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return ((value1 + value2) / 2);
+  const sum = value1 + value2;
+  if (sum === Infinity || sum === -Infinity) {
+    return Number.MAX_VALUE;
+  }
+
+  return sum / 2;
 }
 
 /**
@@ -187,7 +192,7 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-  const factor = Math.pow(10, pow);
+  const factor = 10 ** pow;
   return Math.round(num / factor) * factor;
 }
 
@@ -237,7 +242,7 @@ function isPrime(n) {
  */
 function toNumber(value, def) {
   const num = Number(value);
-  if (!isNaN(num)) {
+  if (!Number.isNaN(num)) {
     return num;
   }
   return def;

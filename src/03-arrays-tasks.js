@@ -241,8 +241,12 @@ function toArrayOfSquares(arr) {
  */
 function getMovingSum(arr) {
   let sum = 0;
-  return arr.map(value => sum += value);
+  return arr.map((value) => {
+    sum += value;
+    return sum;
+  });
 }
+
 
 /**
  * Returns every second item from the specified array:
@@ -311,10 +315,9 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-  const newArr = arr.filter((value) => value > 0);
+  const newArr = arr.filter((value) => value > 0 && Number.isInteger(value));
   return newArr.length;
 }
-
 /**
  * Sorts digit names
  *
@@ -457,9 +460,11 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
-  return Array.from({ length: n }, (_, i) => Array.from({ length: n }, (_, j) => (i === j ? 1 : 0)));
+  return Array.from({ length: n }, (outerValue, i) => Array.from(
+    { length: n },
+    (innerValue, j) => (i === j ? 1 : 0),
+  ));
 }
-
 /**
  * Creates an array of integers from the specified start to end (inclusive)
  *
