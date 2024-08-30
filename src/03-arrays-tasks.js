@@ -36,15 +36,8 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-  let num = 1;
-  const arr = [num];
-  for (let i = 1; i < len; i += 1) {
-    num += 2;
-    arr.push(num);
-  } return arr;
+  return Array.from({ length: len }, (_, i) => 2 * i + 1);
 }
-
-
 /**
  * Returns the doubled array - elements of the specified array
  * are repeated twice using original order
